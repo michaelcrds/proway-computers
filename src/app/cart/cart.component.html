@@ -1,0 +1,26 @@
+<h2 class="cart-title">Carrinho</h2>
+<div *ngIf="cartItens.length > 0; else emptyCart">
+  <ul>
+    <li *ngFor="let cartItem of cartItens">
+      <img [src]="cartItem.imagem" alt="">
+      <p>{{cartItem.descricao}}</p>
+      <p>{{cartItem.preco | currency: 'BRL'}}</p>
+      <label>
+        Quantidade
+        <input type="number" min="1" [(ngModel)]="cartItem.quantidade" (change)="calculateTotal()">
+      </label>
+      <button class="remove-button" (click)="removeItemFromCart(cartItem.id)">
+        <i class="fa-solid fa-minus"></i>
+      </button>
+    </li>
+  </ul>
+  <h2 class="cart-total">Total: {{total | currency: 'BRL'}}</h2>
+  <button class="buy-button" (click)="buy()">Comprar</button>
+</div>
+
+<ng-template #emptyCart>
+  <div class="container">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <h2>Seu carrinho está vazio!</h2>
+  </div>
+</ng-template>
