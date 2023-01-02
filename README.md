@@ -2,6 +2,8 @@
 
 Um sistema completo com todas as funcionalidades básicas de um e-commerce. 
 
+![FireShot Capture 023 - ProwayComputers - michaelcrds github io](https://user-images.githubusercontent.com/61437530/210280670-67021ad1-ec2b-4e6c-afa2-9a61d9cf9eea.png)
+
 ### Tecnologias
 
 - Angular
